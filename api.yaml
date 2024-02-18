@@ -1,0 +1,110 @@
+openapi: 3.0.0
+info:
+  title: Music API
+  description: Simple API providing information about music albums
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /albums:
+    get:
+      summary: Get all albums
+      responses:
+        '200':
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Album'
+    post:
+      summary: Add a new album
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Album'
+      responses:
+        '201':
+          description: New album created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Album'
+  /albums/{id}:
+    get:
+      summary: Get a specific album
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the album
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Album'
+        '404':
+          description: Album not found
+    put:
+      summary: Update a specific album
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the album
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Album'
+      responses:
+        '200':
+          description: Album updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Album'
+        '404':
+          description: Album not found
+    delete:
+      summary: Delete a specific album
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the album
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Album deleted
+        '404':
+          description: Album not found
+components:
+  schemas:
+    Album:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the album
+        title:
+          type: string
+          description: The title of the album
+        artist:
+          type: string
+          description: The artist of the album
+        price:
+          type: number
+          format: double
+          description: The price of the album
