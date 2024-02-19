@@ -47,7 +47,7 @@ func GetByIdHandler(c *gin.Context) {
 	c.IndentedJSON(http.StatusNotFound, gin.H{"message": "album not found"})
 }
 
-func UpdataHandler(c *gin.Context) {
+func UpdateHandler(c *gin.Context) {
 	id := c.Param("id")
 
 	var updatedAlbum album

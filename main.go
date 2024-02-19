@@ -23,7 +23,7 @@ func main() {
 	router.GET("/albums", service.GetHandler)
 	router.GET("/albums/:id", service.GetByIdHandler)
 	router.POST("/albums", service.PostHandler)
-	router.PUT("/albums/:id", service.UpdataHandler)
+	router.PUT("/albums/:id", service.UpdateHandler)
 	router.DELETE("/albums/:id", service.DeleteHandler)
 
 	router.Run("localhost:8080")
