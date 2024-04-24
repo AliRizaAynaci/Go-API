@@ -6,34 +6,6 @@ This project provides a simple API for managing music albums. The API allows you
 
 To view the API documentation, you can import the `api.yaml` file into tools like Postman or Swagger Editor.
 
-## Installation
-
-1. Clone the project:
-
-    ```bash
-    git clone https://github.com/user/project.git
-    ```
-
-2. Navigate to the project directory:
-
-    ```bash
-    cd project
-    ```
-
-3. Install the required dependencies:
-
-    ```bash
-    go mod tidy
-    ```
-
-4. Run the project:
-
-    ```bash
-    go run main.go
-    ```
-
-5. Open your browser and go to [http://localhost:8080](http://localhost:8080) to access the API.
-
 ## Usage
 
 You can send HTTP requests to the following routes to interact with the API:
