@@ -16,6 +16,3 @@ You can send HTTP requests to the following routes to interact with the API:
 - `PUT /albums/{id}`: Update a specific album.
 - `DELETE /albums/{id}`: Delete a specific album.
 
-## Contributing
-
-If you'd like to contribute to this project, please open an Issue or submit a Pull Request.
